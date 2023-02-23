@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
+import android.widget.ImageView
 import kotlin.random.Random
 
 class ActividadDado : AppCompatActivity() {
@@ -13,7 +15,7 @@ class ActividadDado : AppCompatActivity() {
 
         var dado = (1..3).random()
 
-        findViewById<Button>(R.id.botonDado).setOnClickListener {
+        findViewById<ImageButton>(R.id.botonDado).setOnClickListener {
             if (dado == 1){
                 var intento = Intent(this,ActividadObjeto::class.java)
                 startActivity(intento)

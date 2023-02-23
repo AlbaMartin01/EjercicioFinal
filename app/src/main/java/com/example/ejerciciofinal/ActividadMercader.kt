@@ -12,13 +12,14 @@ class ActividadMercader : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_actividad_mercader)
 
         var obj = Objeto(125, 10, 20)
         var objeto1 = ArrayList<Objeto>()
         objeto1.add(obj)
 
         var personaje1 = jugador(10,objeto1,10)
+
 
         findViewById<Button>(R.id.continuar).setOnClickListener {
             var intento = Intent(this, ActividadDado::class.java)

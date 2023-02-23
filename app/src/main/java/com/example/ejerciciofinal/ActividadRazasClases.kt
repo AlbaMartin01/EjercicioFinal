@@ -1,21 +1,24 @@
 package com.example.ejerciciofinal
 
-
 import android.annotation.SuppressLint
+
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.ejerciciofinal.ActividadClases
+import com.example.ejerciciofinal.ActividadDado
+import com.example.ejerciciofinal.R
 
 
-class ActividadPrincipal : AppCompatActivity() {
+class ActividadRazasClases : AppCompatActivity() {
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_actividad_principal)
+        setContentView(R.layout.activity_actividad_razas_clases)
 
         var clase = intent.getStringExtra("imagenC")
 
@@ -72,11 +75,11 @@ class ActividadPrincipal : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.botonVolver).setOnClickListener{
-            val intento1 = Intent(this,ActividadClases::class.java)
+            val intento1 = Intent(this, ActividadClases::class.java)
             startActivity(intento1)
         }
 
-        findViewById<Button>(R.id.botonComenzar).setOnClickListener{
+        findViewById<Button>(R.id.botonComenzarAventura).setOnClickListener{
             val intento2 = Intent(this,ActividadDado::class.java)
             startActivity(intento2)
         }

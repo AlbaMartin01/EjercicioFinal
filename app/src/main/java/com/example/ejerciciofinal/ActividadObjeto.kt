@@ -16,7 +16,9 @@ class ActividadObjeto : AppCompatActivity() {
 
         var obj = Objeto(5, 10, 20)
 
-        var personaje1 = jugador("Juan")
+        var objetos = ArrayList<Objeto>()
+
+        var personaje1 = jugador(20,objetos,0)
 
         var dado = (1..2).random()
         if (dado == 1) {

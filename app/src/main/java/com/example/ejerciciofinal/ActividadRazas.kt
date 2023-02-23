@@ -37,7 +37,7 @@ class ActividadRazas : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.botonAceptar).setOnClickListener{
-            val intento = Intent(this,MainActivity::class.java)
+            val intento = Intent(this,ActividadRazasClases::class.java)
             intento.putExtra("imagenC", clase)
             intento.putExtra("imagenR", stringRazas)
             startActivity(intento)
