@@ -64,6 +64,7 @@ class ActividadMercader : AppCompatActivity() {
                 Toast.makeText(this, "Lo has podido comprar", Toast.LENGTH_SHORT).show()
                 for (i in 1..num!!){
                     objetos.add(obj)
+                    personaje1.objetos.add(obj)
                 }
                 findViewById<TextView>(R.id.editText).setText("")
             } else{

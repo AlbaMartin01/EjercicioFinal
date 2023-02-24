@@ -2,9 +2,11 @@ package com.example.ejerciciofinal
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageView
 
 class ActividadRazas : AppCompatActivity() {

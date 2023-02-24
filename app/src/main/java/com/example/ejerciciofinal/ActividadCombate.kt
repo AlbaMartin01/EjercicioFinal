@@ -83,7 +83,7 @@ class ActividadCombate : AppCompatActivity() {
             var dadoHuir = Random.nextInt(1..6)
             if (dadoHuir > 4){
                 Toast.makeText(this,"Has conseguido huir", Toast.LENGTH_SHORT).show()
-                var intento = Intent(this,PaaginaNegro2::class.java)
+                var intento = Intent(this,ActividadDado::class.java)
                 startActivity(intento)
             } else{
                 Toast.makeText(this,"No has conseguido huir",Toast.LENGTH_SHORT).show()
