@@ -7,6 +7,7 @@ import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 
 class ActividadClases : AppCompatActivity() {
@@ -16,6 +17,16 @@ class ActividadClases : AppCompatActivity() {
         setContentView(R.layout.activity_actividad_clases)
 
         var stringClase = ""
+
+        var start = findViewById<ImageButton>(R.id.start)
+        var pause = findViewById<ImageButton>(R.id.pause)
+
+        start.setOnClickListener{
+            startService(Intent(applicationContext,MyService::class.java))
+        }
+        pause.setOnClickListener{
+            stopService(Intent(applicationContext,MyService::class.java))
+        }
 
         findViewById<Button>(R.id.botonGuerrero).setOnClickListener {
             findViewById<ImageView>(R.id.imagen).setImageResource(R.drawable.guerrero)

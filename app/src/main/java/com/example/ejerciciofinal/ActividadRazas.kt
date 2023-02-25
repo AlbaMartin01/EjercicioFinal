@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.ImageView
 
 class ActividadRazas : AppCompatActivity() {
@@ -17,6 +18,16 @@ class ActividadRazas : AppCompatActivity() {
 
         var stringRazas = ""
         var clase = intent.getStringExtra("imagenC")
+
+        var start = findViewById<ImageButton>(R.id.start)
+        var pause = findViewById<ImageButton>(R.id.pause)
+
+        start.setOnClickListener{
+            startService(Intent(applicationContext,MyService::class.java))
+        }
+        pause.setOnClickListener{
+            stopService(Intent(applicationContext,MyService::class.java))
+        }
 
         findViewById<Button>(R.id.botonElfo).setOnClickListener{
             findViewById<ImageView>(R.id.imagenInicio).setImageResource(R.drawable.elfo)

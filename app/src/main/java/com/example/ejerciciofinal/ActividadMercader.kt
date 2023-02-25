@@ -14,6 +14,16 @@ class ActividadMercader : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_actividad_mercader)
 
+        var start = findViewById<ImageButton>(R.id.start)
+        var pause = findViewById<ImageButton>(R.id.pause)
+
+        start.setOnClickListener{
+            startService(Intent(applicationContext,MyService::class.java))
+        }
+        pause.setOnClickListener{
+            stopService(Intent(applicationContext,MyService::class.java))
+        }
+
         var obj = Objeto(125, 10, 20)
         var objeto1 = ArrayList<Objeto>()
         objeto1.add(obj)

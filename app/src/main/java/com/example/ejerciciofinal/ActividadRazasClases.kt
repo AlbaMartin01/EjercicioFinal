@@ -6,6 +6,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.ejerciciofinal.ActividadClases
@@ -19,6 +20,16 @@ class ActividadRazasClases : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_actividad_razas_clases)
+
+        var start = findViewById<ImageButton>(R.id.start)
+        var pause = findViewById<ImageButton>(R.id.pause)
+
+        start.setOnClickListener{
+            startService(Intent(applicationContext,MyService::class.java))
+        }
+        pause.setOnClickListener{
+            stopService(Intent(applicationContext,MyService::class.java))
+        }
 
         var clase = intent.getStringExtra("imagenC")
 

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.widget.ContentLoadingProgressBar
@@ -18,6 +19,16 @@ class ActividadCombate : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_actividad_combate)
+
+        var start = findViewById<ImageButton>(R.id.start)
+        var pause = findViewById<ImageButton>(R.id.pause)
+
+        start.setOnClickListener{
+            startService(Intent(applicationContext,MyService::class.java))
+        }
+        pause.setOnClickListener{
+            stopService(Intent(applicationContext,MyService::class.java))
+        }
 
         var dadoEnemigoElegir = Random.nextInt(1..2)
 

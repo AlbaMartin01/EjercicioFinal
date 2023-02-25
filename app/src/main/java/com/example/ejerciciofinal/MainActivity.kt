@@ -5,8 +5,10 @@ import android.content.Intent
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -29,14 +31,23 @@ class MainActivity : AppCompatActivity() {
             comprobar(findViewById<EditText>(R.id.usuario).text.toString(),findViewById<EditText>(R.id.contraseña).text.toString())
         }
 
+        var start = findViewById<ImageButton>(R.id.start)
+        var pause = findViewById<ImageButton>(R.id.pause)
+
+        start.setOnClickListener{
+            startService(Intent(applicationContext,MyService::class.java))
+        }
+        pause.setOnClickListener{
+            stopService(Intent(applicationContext,MyService::class.java))
+        }
+
     }
 
     private fun comprobar(correo: String, contraseña: String){
         fireBase.signInWithEmailAndPassword(correo,contraseña).addOnCompleteListener(this){ task ->
             if (task.isSuccessful){
                 val usuario = fireBase.currentUser
-                Toast.makeText(baseContext,findViewById<EditText>(R.id.usuario).text.toString(),
-                    Toast.LENGTH_LONG).show()
+                Toast.makeText(baseContext,findViewById<EditText>(R.id.usuario).text.toString(),Toast.LENGTH_LONG).show()
                 var intento = Intent(this,ActividadClases::class.java)
                 startActivity(intento)
             } else{
@@ -44,4 +55,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
 }
+
+
