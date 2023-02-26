@@ -41,6 +41,11 @@ class MainActivity : AppCompatActivity() {
             stopService(Intent(applicationContext,MyService::class.java))
         }
 
+        findViewById<Button>(R.id.botonRegistro).setOnClickListener{
+            var intento = Intent(this, Registro::class.java)
+            startActivity(intento)
+        }
+
     }
 
     private fun comprobar(correo: String, contraseña: String){

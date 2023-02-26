@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Registro">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,8 +15,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="LOGIN"
-            android:textSize="50dp"/>
+            android:text="REGISTRO"
+            android:textSize="50dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,14 +29,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Usuario:"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:layout_marginRight="25dp"/>
+                android:textSize="17dp"
+                android:layout_marginRight="25dp"
+                android:textStyle="bold"/>
 
-            <EditText android:id="@+id/usuario"
+            <EditText android:id="@+id/usuario2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Correo electrónico" />
+                android:hint="Nombre del usuario"/>
 
         </LinearLayout>
 
@@ -45,17 +45,17 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="5dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Contraseña:"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:layout_marginRight="25dp"/>
+                android:textSize="17dp"
+                android:layout_marginRight="25dp"
+                android:textStyle="bold"/>
 
-            <EditText android:id="@+id/contraseña"
+            <EditText android:id="@+id/contraseña2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Contraseña"
@@ -63,43 +63,40 @@
 
         </LinearLayout>
 
+
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="55dp"
+                android:text="Confirmar contraseña:"
+                android:textSize="17dp"
+                android:layout_marginRight="25dp"
+                android:textStyle="bold"/>
+
+            <EditText android:id="@+id/confirmarContraseña"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contraseña"
+                android:inputType="textPassword"/>
+
+        </LinearLayout>
+
+        <Button android:id="@+id/botonRegistro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp">
+            android:text="REGISTRAR"
+            android:layout_marginTop="10dp"/>
 
-            <Button android:id="@+id/botonRegistro"
-                android:layout_width="140dp"
-                android:layout_height="wrap_content"
-                android:text="Registrarse"
-                android:layout_marginRight="20dp"/>
 
-            <Button android:id="@+id/boton"
-                android:layout_width="140dp"
-                android:layout_height="wrap_content"
-                android:text="Login"
-                android:layout_marginLeft="20dp"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageButton android:id="@+id/start"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@android:drawable/ic_media_play"
-                android:backgroundTint="@color/white"/>
-
-            <ImageButton android:id="@+id/pause"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@android:drawable/ic_media_pause"
-                android:backgroundTint="@color/white"/>
-
-        </LinearLayout>
 
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
